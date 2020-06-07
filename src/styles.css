@@ -1,0 +1,12 @@
+
+body {
+  overflow: hidden;
+}
+
+.bg {
+  background-size: cover;
+  background-position: 0 0;
+  background-attachment: fixed;
+  background-image: url(img/bg.jpg);
+  min-height: 100vh;
+}
