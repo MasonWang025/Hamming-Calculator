@@ -21,8 +21,8 @@ export default function GitCorner() {
           href={"https://github.com/MasonWang025/Hamming-ECC-Magic"}
           bannerColor="#042129"
           octoColor="#FDF6E3"
-          size={width >= 992 ? 115 : 55}
-          direction="right"
+          size={115}
+          direction={width >= 992 ? "right" : "left"}
         />
       </div>
     </div>
