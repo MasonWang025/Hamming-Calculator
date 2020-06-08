@@ -1,0 +1,4 @@
+# Redirects from what the browser requests to what we serve
+/sec-ded    /sec-ded    200
+/encode-decode  /encode-decode 200
+/analysis   /analysis   200
