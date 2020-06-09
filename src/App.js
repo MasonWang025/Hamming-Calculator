@@ -6,13 +6,13 @@ import {
   Redirect,
 } from "react-router-dom";
 
-import NavBar from "./components/NavBar";
-import Card from "./components/Card";
-import SecDec from "./components/SecDec";
-import Code from "./components/Code";
-import Analysis from "./components/Analysis";
+import NavBar from "./components/Navigation/NavBar";
+import Card from "./components/utils/Card";
+import SecDecPage from "./components/SEC-DED/SecDedPage";
+import Code from "./components/Encode/Code";
+import Analysis from "./components/Analysis/Analysis";
 
-import GitCorner from "./components/GitCorner";
+import GitCorner from "./components/Navigation/GitCorner";
 
 export default function App() {
   return (
@@ -21,16 +21,16 @@ export default function App() {
         <NavBar />
         <Card>
           <Switch>
-            <Route exact path="/sec-dec">
-              <SecDec />
+            <Route exact path="/sec-ded">
+              <SecDecPage />
             </Route>
-            <Route exact path="/encode-decode">
+            <Route exact path="/encode">
               <Code />
             </Route>
             <Route exact path="/analysis">
               <Analysis />
             </Route>
-            <Redirect to="/sec-dec" />
+            <Redirect to="/sec-ded" />
           </Switch>
         </Card>
         <GitCorner />

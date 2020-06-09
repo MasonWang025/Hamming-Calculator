@@ -1,10 +1,10 @@
 import React from "react";
-import PageSelect from "./PageSelect";
+import PageSelect from "../Navigation/PageSelect";
 
 export default function Card(props) {
   return (
     <div>
-      <div className="container mx-auto card-container mt-5 shadow-lg">
+      <div className="container mx-auto card-container mt-3 pb-3 shadow-lg">
         <div className="row align-content-center">
           <div className="col">
             <div className="card text-dark bg-light">

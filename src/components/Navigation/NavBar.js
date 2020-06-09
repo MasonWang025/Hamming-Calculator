@@ -24,13 +24,13 @@ export default function NavBar() {
           <ul className="navbar-nav mr-auto">
             <NavBarItem
               title="SEC/DEC"
-              active={path === "/sec-dec"}
-              to="/sec-dec"
+              active={path === "/sec-ded"}
+              to="/sec-ded"
             />
             <NavBarItem
               title="Encode"
-              active={path === "/encode-decode"}
-              to="/encode-decode"
+              active={path === "/encode"}
+              to="/encode"
             />
             <NavBarItem
               title="Analysis"

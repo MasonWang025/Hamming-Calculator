@@ -9,14 +9,14 @@ export default function PageSelect() {
       <div className="btn-group" role="group" aria-label="Navigation Select">
         <PageItemSelect
           title="SEC/DEC"
-          active={path === "/sec-dec"}
-          to="/sec-dec"
+          active={path === "/sec-ded"}
+          to="/sec-ded"
           position="first"
         />
         <PageItemSelect
           title="Encode"
-          active={path === "/encode-decode"}
-          to="/encode-decode"
+          active={path === "/encode"}
+          to="/encode"
           position="middle"
         />
         <PageItemSelect
