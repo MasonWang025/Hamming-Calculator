@@ -6,7 +6,7 @@ export default function NavBar() {
   const path = useLocation().pathname;
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <b className="navbar-brand">ECC Magic</b>
         <button
           className="navbar-toggler"

@@ -8,16 +8,38 @@ export default function SecDedStatus(props) {
   // truncate for display
   let n = 15;
   let displayStr = str.length > n ? str.substr(0, n - 1) + "..." : str;
-  // banner props
-  let title = displayStr;
-  let content = "No errors detected.";
-  let type = "success";
 
   if (str) {
     if (isNaN(str)) {
-      title = "Input error";
-      type = "warning";
-      content = `"${displayStr}" is not a number.`;
+      return (
+        <div>
+          <StatusBanner type="warning" title="Input error">
+            "{displayStr}" is not a valid number.
+          </StatusBanner>
+        </div>
+      );
+    } else {
+      // 2 bit error detection
+      let errArr = props.results.errorBits;
+      let n = errArr.length;
+      if (n > 0) {
+        return (
+          <div>
+            <StatusBanner
+              type="danger"
+              title={n + " error" + (n > 1 ? "s" : "") + " detected"}
+            >
+              Bit
+              {n > 1
+                ? `s ${errArr[0]} and ${errArr[1]} are `
+                : ` ${errArr[0]} is `}
+              incorrect.
+            </StatusBanner>
+          </div>
+        );
+      } else {
+        return <div></div>;
+      }
     }
   } else {
     // empty
@@ -34,12 +56,4 @@ export default function SecDedStatus(props) {
       </div>
     );
   }
-
-  return (
-    <div>
-      <StatusBanner type={type} title={title}>
-        {content}
-      </StatusBanner>
-    </div>
-  );
 }

@@ -6,6 +6,11 @@
   min-height: 100vh;
 }
 
+.main-card,
+.navbar {
+  box-shadow: -3px 3px 15px black;
+}
+
 .select {
   display: inline;
 }
@@ -32,7 +37,8 @@
   display: inline-block;
 }
 
-form label, .label {
+form label,
+.label {
   font-size: 1.5em;
 }
 
@@ -46,4 +52,15 @@ form label, .label {
 
 .card-title-section {
   margin-bottom: -1.2em;
+}
+
+.errorBit {
+  font-weight: bold;
+  text-decoration: underline;
+  font-size: 1.2em;
+  color: var(--danger);
+}
+
+.normalBit {
+  color: var(--success);
 }
