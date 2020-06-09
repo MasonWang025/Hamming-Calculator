@@ -13,7 +13,7 @@ export default function Card(props) {
                   ECC Magic <PageSelect />
                 </h2>
               </div>
-              <div className="card-body p-3 pt-4">{props.children}</div>
+              <div className="card-body p-3">{props.children}</div>
             </div>
           </div>
         </div>

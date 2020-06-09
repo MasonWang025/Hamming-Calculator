@@ -2,21 +2,22 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import StatusBanner from "../utils/StatusBanner";
-import determineType from "../../ecc-logical/determineType";
 
 export default function SecDedStatus(props) {
   let str = props.encoded;
-  let title = str;
-  let content = "No errors detected";
+  // truncate for display
+  let n = 15;
+  let displayStr = str.length > n ? str.substr(0, n - 1) + "..." : str;
+  // banner props
+  let title = displayStr;
+  let content = "No errors detected.";
   let type = "success";
 
   if (str) {
-    // encoded has value inside it
-    let strType = determineType(str);
-    if (strType === 0) {
+    if (isNaN(str)) {
       title = "Input error";
       type = "warning";
-      content = `"${str}" is not a number.`;
+      content = `"${displayStr}" is not a number.`;
     }
   } else {
     // empty
@@ -26,7 +27,7 @@ export default function SecDedStatus(props) {
           Prepend binary values with <b>0b</b> and hexidecimal values with{" "}
           <b>0x</b>. To encode a value, visit{" "}
           <b>
-            <Link to="/encode">Encode/Decode</Link>
+            <Link to="/encode">Encode</Link>
           </b>
           .
         </StatusBanner>
