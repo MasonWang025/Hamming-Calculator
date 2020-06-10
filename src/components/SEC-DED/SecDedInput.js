@@ -24,13 +24,16 @@ export default function SecDecInput(props) {
                 props.handleChange(e);
                 let binArray = toBinaryArray(e.target.value);
                 props.updateBinaryArr(binArray);
-                console.log(findSyndrome(binArray));
                 props.updateResults({
                   errorBit: findSyndrome(binArray),
                   parityArray: getParityArray(binArray),
                 });
                 // validate
-                props.updateValid(e.target.value && !isNaN(e.target.value));
+                props.updateValid(
+                  e.target.value &&
+                    !isNaN(e.target.value) &&
+                    e.target.value.length < 31
+                );
               }}
             />
           </div>
