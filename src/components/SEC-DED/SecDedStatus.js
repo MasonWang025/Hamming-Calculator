@@ -20,20 +20,12 @@ export default function SecDedStatus(props) {
       );
     } else {
       // 2 bit error detection
-      let errArr = props.results.errorBits;
-      let n = errArr.length;
-      if (n > 0) {
+      let errArr = props.results.errorBit;
+      if (errArr >= 0) {
         return (
           <div>
-            <StatusBanner
-              type="danger"
-              title={n + " error" + (n > 1 ? "s" : "") + " detected"}
-            >
-              Bit
-              {n > 1
-                ? `s ${errArr[0]} and ${errArr[1]} are `
-                : ` ${errArr[0]} is `}
-              incorrect.
+            <StatusBanner type="danger" title="Error detected">
+              {`Bit ${errArr + 1} is incorrect.`}
             </StatusBanner>
           </div>
         );

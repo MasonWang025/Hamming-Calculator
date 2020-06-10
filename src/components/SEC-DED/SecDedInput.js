@@ -1,6 +1,8 @@
 import React from "react";
 
 import toBinaryArray from "../../ecc-logical/toBinaryArray";
+import findSyndrome from "../../ecc-logical/findSyndrome";
+import getParityArray from "../../ecc-logical/getParityArray";
 
 export default function SecDecInput(props) {
   return (
@@ -20,7 +22,13 @@ export default function SecDecInput(props) {
               value={props.value}
               onChange={(e) => {
                 props.handleChange(e);
-                props.updateBinaryArr(toBinaryArray(e.target.value));
+                let binArray = toBinaryArray(e.target.value);
+                props.updateBinaryArr(binArray);
+                console.log(findSyndrome(binArray));
+                props.updateResults({
+                  errorBit: findSyndrome(binArray),
+                  parityArray: getParityArray(binArray),
+                });
                 // validate
                 props.updateValid(e.target.value && !isNaN(e.target.value));
               }}

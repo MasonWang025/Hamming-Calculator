@@ -5,15 +5,19 @@ import SecDedInput from "./SecDedInput";
 import useForm from "../utils/useForm";
 import SecDedStatus from "./SecDedStatus";
 import SecDedResults from "./SecDedResults";
+import findSyndrome from "../../ecc-logical/findSyndrome";
+import getParityArray from "../../ecc-logical/getParityArray";
 
 export default function SecDec() {
-  const [values, handleChange] = useForm({ encoded: "0b101" });
-  const [binaryArr, updateBinaryArr] = useState([1, 0, 1]);
+  const [values, handleChange] = useForm({ encoded: "0b011100101110" });
+  const [binaryArr, updateBinaryArr] = useState(
+    values.encoded.substring(2).split("").map(Number)
+  );
   const [valid, updateValid] = useState(false);
+  const syndrome = findSyndrome(binaryArr);
   const [results, updateResults] = useState({
-    errorBits: [],
-    parityArray: [],
-    bitToCorrect: 0,
+    errorBit: syndrome,
+    parityArray: getParityArray(binaryArr),
   });
 
   return (
@@ -27,9 +31,14 @@ export default function SecDec() {
         handleChange={handleChange}
         updateBinaryArr={updateBinaryArr}
         updateValid={updateValid}
+        results={results}
+        updateResults={updateResults}
       />
-      {valid && console.log(binaryArr)}
-      <SecDedStatus encoded={values.encoded} results={results} />
+      <SecDedStatus
+        encoded={values.encoded}
+        results={results}
+        valid={valid}
+      />
       <SecDedResults
         binaryArr={binaryArr}
         results={results}

@@ -8,7 +8,7 @@ export default function PageSelect() {
     <div className="select ml-sm-3 justify-content-center">
       <div className="btn-group" role="group" aria-label="Navigation Select">
         <PageItemSelect
-          title="SEC/DEC"
+          title="SEC/DED"
           active={path === "/sec-ded"}
           to="/sec-ded"
           position="first"
