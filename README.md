@@ -1,6 +1,6 @@
 # hamming-code-calculator
 
-**Computes Hamming code, syndrome matrices, corrects single bit errors, and detects double bit errors.**
+**Computes hamming code syndrome matrices (SEC/DED).**
 
 [More about Hamming code](https://en.wikipedia.org/wiki/Hamming_code)
 
