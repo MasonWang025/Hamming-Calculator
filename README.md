@@ -1,4 +1,4 @@
-# Hamming-Calculator
+# hamming-code-calculator
 
 **Computes Hamming code, syndrome matrices, corrects single bit errors, and detects double bit errors.**
 
